@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:second_app/utils/routes.dart';
 
 class loginPage extends StatelessWidget {
   @override
@@ -8,13 +11,15 @@ class loginPage extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset("assets/images/login_image.png"),
+            Image.asset(
+              "assets/images/login_image.png",
+            ),
             SizedBox(
               height: 20.0,
             ),
             Text(
               "Welcome",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 20.0,
@@ -34,18 +39,22 @@ class loginPage extends StatelessWidget {
                         hintText: "Enter Password", labelText: "password"),
                   ),
                   SizedBox(
-                    height: 20.0,
+                    height: 40.0,
                   ),
                   ElevatedButton(
                     style: ButtonStyle(
-                     backgroundColor: MaterialStatePropertyAll<Color>(Color.fromARGB(255, 5, 138, 247)),
+                        backgroundColor: MaterialStatePropertyAll<Color>(
+                            Color.fromARGB(255, 36, 148, 239)),
+                        minimumSize: MaterialStatePropertyAll(Size(140, 40)),
+                         
                     ),
                     onPressed: () {
-                      print("hi gaurav");
+                      Navigator.pushNamed(context, Myroutes.homeroutes);
                     },
-                    child: Text("Login"),
+                    child: Text("Login",style: TextStyle(color:Colors.black87),),
                   ),
-                   SizedBox(
+              
+                  SizedBox(
                     height: 20.0,
                   ),
                   Text("forgot Password?")
